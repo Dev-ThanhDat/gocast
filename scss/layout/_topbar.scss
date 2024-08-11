@@ -1,0 +1,70 @@
+@use "../abstracts" as abst;
+
+.topbar {
+  padding: 24px 56px;
+  background-color: white;
+  @include abst.flexBox(center, space-between);
+  &-logo {
+    flex-shrink: 0;
+    width: 120px;
+  }
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    & > * {
+      flex-shrink: 0;
+    }
+  }
+}
+.search {
+  padding: 12px 20px;
+  border-radius: 12px;
+  @include abst.flexBox(center, false, 12px);
+  background-color: abst.$gray-natural2;
+  flex: 0 1 360px;
+  &-input {
+    background-color: transparent;
+    color: abst.$primary-color;
+    font-weight: 500;
+    caret-color: abst.$primary-color;
+    flex: 1;
+    &::-webkit-input-placeholder {
+      color: abst.$gray2;
+    }
+    &::-moz-input-placeholder {
+      color: abst.$gray2;
+    }
+  }
+}
+.profile {
+  display: block;
+  width: 48px;
+  height: 48px;
+  img {
+    border-radius: 100rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.button-upload {
+  height: 48px;
+  --gap: 6px;
+  --p: 0 16px;
+}
+@include abst.screenMinWidth(1280px) {
+  .topbar-logo {
+    display: none;
+  }
+}
+@include abst.screenMaxWidth(1279.98px) {
+  .topbar {
+    padding: 20px 24px;
+  }
+  .topbar-action,
+  .search,
+  .button-upload {
+    display: none;
+  }
+}

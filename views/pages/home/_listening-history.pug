@@ -1,0 +1,5 @@
+.widget
+  +widgetHeader("Listening history")
+  .listen-list
+    each listen in [{img: "./assets/images/unsplash-10.jpg", title: "Don't Always Win | LifeSpring"},{img: "./assets/images/unsplash-11.jpg", title: "Keep Moving. Don't Look Back!"},{img: "./assets/images/unsplash-12.jpg", title: "Don't Always Win | LifeSpring"}]
+      +listenItem(listen.img, listen.title)
