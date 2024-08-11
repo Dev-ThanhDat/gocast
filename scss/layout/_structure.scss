@@ -1,0 +1,24 @@
+@use "../abstracts" as abst;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 256px minmax(0, 1fr);
+  min-height: 100vh;
+}
+.main-container {
+  padding: 37px 56px;
+  container-type: inline-size;
+  container-name: mainContainer;
+}
+@include abst.screenMaxWidth(1279.98px) {
+  .button-discover {
+    display: flex;
+  }
+  .wrapper {
+    padding-bottom: 80px;
+    grid-template-columns: 1fr;
+  }
+  .main-container {
+    padding: 0 24px;
+  }
+}

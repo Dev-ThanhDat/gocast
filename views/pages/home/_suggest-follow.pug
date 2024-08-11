@@ -1,0 +1,5 @@
+.widget.widget-follow
+  +widgetHeader("Suggested Follows")
+  .follow-list
+    each follow in [{img: "./assets/images/user-8.png", name: "Yahia Amin", username: "@yahiamdamin"},{img: "./assets/images/user-9.png", name: "Mufti Menk", username: "@muftimenk"},{img: "./assets/images/user-10.png", name: "Omar Suleiman", username: "@omarsuleiman"}]
+      +followItem(follow.img, follow.name, follow.username)

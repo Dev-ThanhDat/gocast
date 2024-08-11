@@ -1,0 +1,5 @@
+.widget.widget-podcast
+  +widgetHeader("Top 8 Podcast")
+  .top-podcast-images
+    each podcast in [{img:"./assets/images/unsplash-4.jpg"},{img:"./assets/images/unsplash-5.jpg"},{img:"./assets/images/unsplash-6.jpg"},{img:"./assets/images/unsplash-7.jpg"}, {img:"./assets/images/unsplash-1.jpg"},{img:"./assets/images/unsplash-2.jpg"},{img:"./assets/images/unsplash-8.jpg"},{img:"./assets/images/unsplash-9.jpg"}]
+      img(src= podcast.img, alt="")

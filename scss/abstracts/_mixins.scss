@@ -1,0 +1,21 @@
+@mixin flexBox($align: center, $justify: center, $gap: 0, $dir: row) {
+  display: flex;
+  align-items: $align;
+  flex-direction: $dir;
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $gap {
+    gap: $gap;
+  }
+}
+@mixin screenMinWidth($value) {
+  @media screen and (min-width: $value) {
+    @content;
+  }
+}
+@mixin screenMaxWidth($value) {
+  @media screen and (max-width: $value) {
+    @content;
+  }
+}

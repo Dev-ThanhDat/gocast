@@ -1,0 +1,13 @@
+{
+  "name": "gocast",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "pug index.pug --pretty --watch",
+    "sass": "sass ./sass:styles/ --watch"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.77.6"
+  }
+}

@@ -1,0 +1,67 @@
+@use "../abstracts" as abst;
+
+.sidebar {
+  background: abst.$bg-color;
+  padding: 48px 30px;
+  border-right: 1px solid abst.$gray-natural2;
+  @include abst.screenMaxWidth(1279.98px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    bottom: 0;
+    z-index: 10;
+    transition: transform 0.25s linear;
+    transform: translateX(-100%);
+  }
+}
+.logo {
+  @include abst.flexBox();
+  margin-bottom: 44px;
+  &-link {
+    width: 82px;
+    height: 22px;
+  }
+}
+.menu {
+  --gap: 26px;
+  @include abst.flexBox(false, false, false, column);
+  gap: 6px;
+  &:not(:last-child)::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: abst.$graye9;
+    margin-block: var(--gap);
+  }
+  &-heading {
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: abst.$text-gray;
+    padding-left: 20px;
+  }
+  &-icon {
+    flex: 0 0 24px;
+  }
+  &-link {
+    @include abst.flexBox(false, false, 10px);
+    color: abst.$text-gray;
+    font-size: 14px;
+    line-height: 143%;
+    font-weight: 500;
+    padding: 8px 30px 8px 20px;
+    border-radius: 12px;
+    transition: all 0.2s linear;
+    &:hover {
+      background: abst.$gradient;
+      color: white;
+      [fill^="#E5"] {
+        fill: white;
+        opacity: 1;
+      }
+      [fill^="#A5"] {
+        fill: abst.$primary-color-4;
+      }
+    }
+  }
+}

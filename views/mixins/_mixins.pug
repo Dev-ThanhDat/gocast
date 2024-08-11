@@ -1,0 +1,110 @@
+mixin menuItem(text, icon = "", href = "#")
+  li.menu-item 
+    a.menu-link(href= href)
+      span.menu-icon 
+        if icon
+          case icon
+            when "icon-graph"
+              include ../icons/_icon-graph
+            when "icon-chart"
+              include ../icons/_icon-chart
+            when "icon-3dcube"
+              include ../icons/_icon-3dcube
+            when "icon-play"
+              include ../icons/_icon-play
+            when "icon-subscriptions"
+              include ../icons/_icon-subscriptions
+            when "icon-discovery"
+              include ../icons/_icon-discovery
+            when "icon-microphone"
+              include ../icons/_icon-microphone
+            when "icon-user"
+              include ../icons/_icon-user
+            when "icon-add-user"
+              include ../icons/_icon-add-user
+            when "icon-star"
+              include ../icons/_icon-star
+      span.menu-text= text
+
+mixin toggle()
+  label.toggle
+    input(type="checkbox")
+    .toggle-main
+      .toggle-spinner
+
+mixin button(icon = false, title = "Play Episode")
+  button.button.button--primary
+    if icon
+      include ../icons/_icon-play
+    span= title
+
+mixin feedItem(color, avatar, name, date, image, podcast, heading, desc)
+  .feed-item
+    .feed-item-header
+      .feed-author
+        .feed-author-avatar(style= `--color: ${color}`)
+          img(src= avatar, alt="Image Avatar")
+          span.feed-author-verify
+            include ../icons/_icon-verify
+        .feed-author-content
+          .feed-author-header
+            h4.feed-author-name= name
+            .feed-author-rating
+              span rated an episude
+              img(src="./assets/images/star.png", alt="")
+          .feed-date= date
+      span
+        include ../icons/_icon-more
+    .feed-item-main
+      .feed-image
+        img(src= image, alt="Image")
+      .feed-item-content
+        p.feed-item-podcast= podcast
+        h3.feed-item-heading= heading
+        p.feed-item-desc= desc
+    .feed-item-footer
+      .feed-actions
+        button
+          include ../icons/_icon-heart
+        button
+          include ../icons/_icon-star-2
+        button
+          include ../icons/_icon-playlist
+      +button(true)
+
+mixin widgetHeader( title = "", url = "#" )
+  .widget-header
+    h3.widget-heading= title
+    a.widget-view-all(href= url) View all
+
+mixin followItem(image, name, username)
+  .follow
+    .follow-user
+      .follow-user-avatar
+        img(src= image, alt="")
+      .follow-user-info
+        h4.follow-user-name= name
+        p.follow-user-username= username
+    .follow-action
+      +button(false, "Follow")
+
+mixin listenItem(image, title)
+  .listen
+    .listen-image
+      img(src= image, alt="")
+    .listen-info
+      h4.listen-title= title
+      .listen-meta
+        .listen-meta-item
+          include ../icons/_icon-play
+          span 156
+        .listen-meta-item
+          include ../icons/_icon-heart
+          span 156
+
+mixin topicItem(image, title, podcast)
+  .topic
+    img.topic-image(src= image)
+    .topic-content
+      h4.topic-title= title
+      .topic-podcast= podcast

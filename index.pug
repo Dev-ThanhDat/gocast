@@ -1,0 +1,16 @@
+extends ./views/layouts/_dashboard
+block title 
+  title Gocast - Home
+append stylesheet
+  link(rel="stylesheet", href="./styles/home.css")
+block main
+  .home-wrapper
+    .home-left
+      include ./views/pages/home/_popular-host
+      include ./views/pages/home/_trending
+      include ./views/pages/home/_feed
+    .home-right
+      include ./views/pages/home/_top-podcast
+      include ./views/pages/home/_suggest-follow
+      include ./views/pages/home/_listening-history
+      include ./views/pages/home/_topics
