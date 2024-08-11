@@ -1,0 +1,8 @@
+.host 
+  h2.heading.host-heading Popular Hosts
+  ul.host-list 
+    each host in [{img: "./assets/images/user-1.png", color: "#FFBAA5", name: "Thomas"},{img: "./assets/images/user-2.png", color: "#FFD381", name: "Darrell"},{img: "./assets/images/user-3.png", color: "#B6AEE9", name: "Arlene"},{img: "./assets/images/user-4.png", color: "#FFB5CD", name: "Kristin"},{img: "./assets/images/user-5.png", color: "#FFE2AB", name: "Courtney"},{img: "./assets/images/user-6.png", color: "#FFC7D9", name: "Cody"},{img: "./assets/images/user-7.png", color: "#B6AEE9", name: "Arlene"}]
+      li.host-item
+        .host-avatar(style= `--color: ${host.color}`)
+          img(src= host.img, alt="Image Avatar")
+        span.host-name= host.name

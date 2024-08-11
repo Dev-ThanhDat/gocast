@@ -1,0 +1,16 @@
+@use "../abstracts" as abst;
+
+.button {
+  --gap: 10px;
+  --fw: 600;
+  --p: 8px 14px;
+  @include abst.flexBox(center, center, var(--gap));
+  font-weight: var(--fw);
+  padding: var(--p);
+  border-radius: 8px;
+  font-size: 15px;
+  &--primary {
+    color: abst.$gray-natural1;
+    background-color: abst.$primary-color;
+  }
+}
