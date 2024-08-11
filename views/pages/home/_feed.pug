@@ -1,0 +1,11 @@
+.feed
+  .feed-header
+    .feed-tab
+      each tab, index in ["My Feed","Popular Feed", "Recent"]
+        .feed-tab-item(class=`${index === 0 ? 'is-active' : ''}`)= tab
+    .feed-toggle
+      +toggle
+      p New Releases &amp; Guests Only
+  .feed-main
+    each feed in [{color: "#FFC7D9", avatar: "./assets/images/user-6.png" , name: "James Killened", date: "Jun 25th", image: "./assets/images/unsplash-1.jpg", podcast: "Perspective Podcast (Ep. 1)", heading: "Philosophy vs Religion vs Science: Yahia Amin and Sadman Sadik", desc: "Play Philosophy vs Religion vs Science: Perspective Podcast (Ep. 1) | Yahia Amin and Sadman Sadik by PERSPECTIVE with Yahia Amin on desktop and mobile. Play over 265 million tracks for..."},{color: "#FFBAA5", avatar: "./assets/images/user-1.png" , name: "Thomas L. Fletcher", date: "Jun 22th", image: "./assets/images/unsplash-2.jpg", podcast: "How To & Tips", heading: "How To & Tips UX Design Process: Mental Modeling Framework, How To & Tips", desc: "Nicole is a User Experience Designer passionate about technology startups, cars, education & music. Based in Los Angeles CA., she is a User Experience Designer @ Iconmobile, an award-winning mobile"},{color: "#FFB5CD", avatar: "./assets/images/user-4.png" , name: "Kristin", date: "Jun 20th", image: "./assets/images/unsplash-3.jpg", podcast: "Perspective Podcast (Ep. 1)", heading: "I CAN'T DO THIS | Islam and Mental Health | Full Podcast", desc: "The relationship between mental health and faith is a topic that has long been riddled with confusion, debate, and much misconception."}]
+      +feedItem(feed.color, feed.avatar, feed.name, feed.date, feed.image, feed.podcast, feed.heading, feed.desc)
